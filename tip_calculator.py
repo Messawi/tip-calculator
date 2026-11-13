@@ -31,4 +31,4 @@ def split_bill(total, people):
     Example: split_bill(115, 2) -> 57.5
     Raise ValueError if people <= 0.
     """
-    raise NotImplementedError
+    return round(total / people, 2)
