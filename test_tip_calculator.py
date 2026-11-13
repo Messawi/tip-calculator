@@ -25,3 +25,17 @@ def test_calculate_total_basic():
 
 def test_split_bill_basic():
        assert split_bill(115, 2) == 57.5       
+
+def test_calculate_tip_negative_bill():
+       with pytest.raises(ValueError):
+           calculate_tip(-50, 15)
+
+
+def test_calculate_tip_negative_pct():
+       with pytest.raises(ValueError):
+           calculate_tip(100, -5)
+
+
+def test_split_bill_zero_people():
+       with pytest.raises(ValueError):
+           split_bill(100, 0)
