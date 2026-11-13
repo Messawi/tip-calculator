@@ -20,3 +20,5 @@ def test_calculate_tip_basic():
     assert calculate_tip(100, 15) == 15.0
 
 # TODO: add your own tests below (fixture, parametrize, edge cases).
+def test_calculate_total_basic():
+       assert calculate_total(100, 15) == 115.0
