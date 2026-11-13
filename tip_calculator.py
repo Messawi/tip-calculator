@@ -14,6 +14,9 @@ def calculate_tip(bill, tip_pct):
     Example: calculate_tip(100, 15) -> 15.0
     Raise ValueError if bill or tip_pct is negative.
     """
+    if bill < 0 or tip_pct < 0:
+        raise ValueError("bill and tip_pct must not be negative")
+      
     return bill * tip_pct / 100
 
 
@@ -31,4 +34,7 @@ def split_bill(total, people):
     Example: split_bill(115, 2) -> 57.5
     Raise ValueError if people <= 0.
     """
+    if people <= 0:
+           raise ValueError("people must be greater than 0")
+      
     return round(total / people, 2)
