@@ -22,7 +22,7 @@ def calculate_total(bill, tip_pct):
 
     Example: calculate_total(100, 15) -> 115.0
     """
-    raise NotImplementedError
+    return bill + calculate_tip(bill, tip_pct)
 
 
 def split_bill(total, people):
