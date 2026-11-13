@@ -22,3 +22,6 @@ def test_calculate_tip_basic():
 # TODO: add your own tests below (fixture, parametrize, edge cases).
 def test_calculate_total_basic():
        assert calculate_total(100, 15) == 115.0
+
+def test_split_bill_basic():
+       assert split_bill(115, 2) == 57.5       
