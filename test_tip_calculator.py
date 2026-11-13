@@ -39,3 +39,25 @@ def test_calculate_tip_negative_pct():
 def test_split_bill_zero_people():
        with pytest.raises(ValueError):
            split_bill(100, 0)
+
+@pytest.fixture
+def sample_bill():
+       return 100
+
+
+def test_calculate_total_with_fixture(sample_bill):
+       assert calculate_total(sample_bill, 20) == 120.0
+
+
+@pytest.mark.parametrize("bill, tip_pct, expected", [
+       (100, 15, 15.0),
+       (50, 20, 10.0),
+       (200, 10, 20.0),
+       (80, 0, 0.0),
+   ])
+def test_calculate_tip_parametrized(bill, tip_pct, expected):
+       assert calculate_tip(bill, tip_pct) == expected
+
+
+def test_split_bill_rounds_to_two_decimals():
+       assert split_bill(100, 3) == 33.33
