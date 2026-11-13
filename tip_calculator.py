@@ -14,7 +14,7 @@ def calculate_tip(bill, tip_pct):
     Example: calculate_tip(100, 15) -> 15.0
     Raise ValueError if bill or tip_pct is negative.
     """
-    raise NotImplementedError
+    return bill * tip_pct / 100
 
 
 def calculate_total(bill, tip_pct):
